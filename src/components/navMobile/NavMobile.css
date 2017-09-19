@@ -17,7 +17,7 @@
   pointer-events: none;
 }
 
-.nav__mobile--active{
+.nav__mobile.nav__mobile--active{
   opacity: 1;
   pointer-events: all;
 }
