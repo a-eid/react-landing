@@ -1,0 +1,112 @@
+.header__container{
+  position: relative;
+  /* padding: 1em; */
+  background: #87e0fd;
+  background: -moz-linear-gradient(top,  #87e0fd 0%, #53cbf1 45%, #05abe0 100%);
+  background: -webkit-linear-gradient(top,  #87e0fd 0%,#53cbf1 45%,#05abe0 100%);
+  background: linear-gradient(to bottom,  #87e0fd 0%,#53cbf1 45%,#05abe0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 );
+}
+
+@media( max-width: 650px ){
+  .header__container{
+    /* padding: 2em 1em; */
+  }
+}
+
+.header header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+  height: 50px;
+  fill: white;
+}
+
+
+.intro{
+  padding: 5em 0 9em 0;
+  max-width: 450px;
+  font-size: 18px;
+}
+
+.intro p{
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+  font-size: 20px;
+  color: white;
+}
+
+.header:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -104px;
+  overflow: visible;
+  width: 100%;
+  height: 210px;
+  background: #eee; 
+  z-index: 0;
+  /* -webkit-transform: skewY(-4deg);
+  -moz-transform: skewY(-4deg);
+  -ms-transform: skewY(-4deg);
+  -o-transform: skewY(-4deg); */
+  transform: skewY(-8deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: initial;
+}
+
+
+/* test */
+.draw-border {
+  box-shadow: inset 0 0 0 2px white;
+  color: white;
+  -webkit-transition: color 0.25s 0.08333s;
+  transition: color 0.25s 0.08333s;
+  position: relative;
+}
+
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+.draw-border::after {
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+.draw-border:hover {
+  color: #55d;
+}
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #55d;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+          transition-delay: 0s, 0s, 0.25s;
+}
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+          transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn:focus {
+  outline: 2px dotted #55d;
+}
