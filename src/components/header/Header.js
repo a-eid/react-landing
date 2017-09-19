@@ -12,15 +12,34 @@ export default class extends Component {
     navMobileActive: false
   };
 
+  documentRemoveNavAdd = () => {
+    document.addEventListener("click" , this.closeNav , true )
+    console.log("add")
+  }
+
+  documentRemoveNavRemove = () => {
+    document.removeEventListener("click" , this.closeNav , true )
+    console.log("remove")
+  }
+
+  closeNav = () => {
+    this.setState({
+      navMobileActive: false
+    })
+  }
+
   componentDidMount() {
-      const nav = $(".nav-mobile-icon")
-      nav.on("click" , () => {
-        nav.classList.toggle("open");
+      const navIcon = $(".nav-mobile-icon")
+      navIcon.on("click" , () => {
+        // nav.classList.toggle("open");
         this.setState({
           navMobileActive: this.state.navMobileActive ? false :  true
         })
       })
   }
+
+  // TODO : REMOVE NAV WHEN CLICKING ANYWHERE;
+
   render() {
     return (
       <div className="header__container">
@@ -35,7 +54,7 @@ export default class extends Component {
             </div>
 
           </header>
-          <NavMobile active={this.state.navMobileActive} />
+          <NavMobile active={this.state.navMobileActive} close={ this.closeNav } />
           <div className="intro" >
             <p>The Best Reactjs Developer for your project. Submit your requirement , we take care of everything else</p>
             <button className="btn draw-border">Learn More</button>

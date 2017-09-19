@@ -1,34 +1,107 @@
 .nav__mobile{
-  max-height: 0;
   overflow: hidden;
-  transition: all 0.5s ease;
-}
-
-.nav__mobile ul {
-  margin: 10px;
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.nav__mobile ul li{
-  display: inlint-block
-}
-.nav__mobile ul li a{
-  display: inline-block;
-  padding-top: 0.5em ;
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  background: white;
+  box-shadow:0 0px 22px rgba(0,0,0,0.25);
+  border-radius: 7px;
+  padding-top: 80px;
+  max-width: 650px;
+  margin: 0 auto;
+  left: 7px; 
+  right: 7px;
+  top: 18px;
+  background: #fff;
+  opacity: 0;
+  z-index: 5;
+  pointer-events: none;
 }
 
 .nav__mobile--active{
-  max-height: 500px;
+  opacity: 1;
 }
 
+@media (max-width: 520px){
+  .nav__mobile{
+    max-width: 95% ;
+  }
+}
 
+.nav__mobile--top ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
 
+.nav__mobile--top  ul li{
+  display: inline-block;
+  padding: .7em 0;
+}
+.nav__mobile--top  ul li:first-child{
+  padding-top: 0;
+}
 
-  
+.nav__mobile--top  ul li:last-child{
+  padding-bottom: 0;
+}
+.nav__mobile--top ul li a{
+  display: inline-block;
+  padding-top: 0.5em ;
+  text-decoration: none;
+  color: #333;;
+  font-size: 20px;
+}
+
+.close{
+  width: 40px; 
+  height: 40px;
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 100;
+  color: purple;
+  cursor: pointer;
+}
+.nav__mobile--button{
+  padding: .8em 1.4em;
+  background: purple;
+  color: white;
+  letter-spacing: 3px;
+  border-radius: 7px;
+  margin: 1.7em auto;
+  font-size: 16px;
+}
+
+.nav__mobile--contain--top{
+  border-bottom: 1px solid #ddd;
+}
+
+.nav__mobile--contain--bottom{
+  padding: 0 1em;
+}
+
+.nav__mobile--contain--top nav, .nav__mobile--contain--bottom section , .nav__mobile--contain--button div{
+  max-width: 290px;
+  margin: auto; 
+}
+
+.ul__container{
+  display: flex;
+  justify-content: space-between;
+  margin: .8em auto;
+}
+
+.ul__container li{
+  font-size: 20px;
+  padding: 0.7em;
+}
+.nav__mobile--contain--button{
+  background: #eee;
+  margin-left: -1em;
+  margin-right: -1em;
+  padding:  1em;
+}
