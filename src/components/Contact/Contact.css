@@ -19,10 +19,40 @@
   font-size: 18px; 
 }
 .contact__button{
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   background: #fff;
   padding: 0.8em 2.2em;
   border-radius: 7px;
   color: #3232ff;
 }
+
+/* responsive > 800px  */
+
+@media ( min-width: 800px){
+  .contact{
+    display: flex;
+    max-width: 85%;
+    padding-left: 0;
+    padding-right: 0;
+  }  
+  .contact__button{
+    align-self: center;
+    /* flex: 1; */
+    max-width: 203px;
+    margin-left: auto;
+  }
+
+  .contact div {
+    /* flex: 2; */
+    max-width: 65%;
+  }
+}
+
+@media( min-width: 1300px){
+  .contact{
+    max-width: 1200px;
+    padding: 1em;
+  }
+}
+

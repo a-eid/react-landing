@@ -1,12 +1,25 @@
-import React from "react";
+import React , { Component } from "react";
 import "./NavMobile.css";
 
-export default ({ active , close }) => {
-  let classes = ["nav__mobile"]
-  active && classes.push("nav__mobile--active") 
 
-  return (
-    <div className= { classes.join(" ") } >
+export default class NavMobile extends Component {
+
+  componentWillReceiveProps(nextProps){
+    // just in case you wanna hook on some styles to the button and the container 
+    if(nextProps.active) {
+      document.querySelector(".nav__mobile--contain--button").classList.add("active")
+    }else{
+      document.querySelector(".nav__mobile--contain--button").classList.remove("active")
+    }
+  }
+
+  render() {
+    const {active , close} = this.props 
+    let classes = ["nav__mobile"]
+    active && classes.push("nav__mobile--active") 
+    
+    return (
+      <div className= { classes.join(" ") } >
       <div className="nav__mobile--contain--top">
         <nav className="nav__mobile--top">
           <span className="close" onClick={ close }>X</span>
@@ -34,11 +47,10 @@ export default ({ active , close }) => {
           </section>
         <div className="nav__mobile--contain--button">
           <div>
-            <button className="btn">Sign Up</button>
+            <button className="btn signUp">Sign Up</button>
           </div>
         </div>
       </div>
     </div>
-
-  ) 
-};
+  )};
+}

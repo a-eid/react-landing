@@ -1,0 +1,19 @@
+.carousel .control-dots{
+    padding: 8px;
+    margin: 0;
+    background: white;
+    /* bottom: 16px; */
+}
+
+.slide div{
+  height: 12em;
+  background: transparent;
+}
+
+.carousel .control-dots .dot{
+  background: black;
+}
+
+.carousel .slide{
+  background: transparent;
+}

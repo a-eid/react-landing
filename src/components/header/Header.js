@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import logo from "../../assets/imgs/logo.svg";
-import { $, $$, l } from "../../helper/bling";
+import { $ } from "../../helper/bling";
 
 import NavMobile from "../navMobile/NavMobile"
+import Nav from "../Nav/Nav.js"
 
 import "./Header.css";
 import "./navMobileIcon.css"
@@ -45,6 +45,7 @@ export default class extends Component {
       <div className="header__container">
         <div className="header container">
           <header>
+            {/* react logo */}
             <Svg />
 
             <div className="nav-mobile-icon">
@@ -53,6 +54,7 @@ export default class extends Component {
               <span />
             </div>
 
+            <Nav />
           </header>
           <NavMobile active={this.state.navMobileActive} close={ this.closeNav } />
           <div className="intro" >

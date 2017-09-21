@@ -1,9 +1,8 @@
 .description{
   position: relative;
   z-index: 1;
-  background-color: #eee;
-  min-height: 140px;
   padding: 1em;
+  background: #eee;
 }
 
 .description div{
@@ -39,3 +38,19 @@
   backface-visibility: initial;
 }
 
+@media(min-width: 750px){
+  .description{
+    max-width: 400px;
+    margin-left: auto;
+    background: transparent;
+    position: relative;
+    top: -90px;
+    color: black;
+    margin-right: 10%;
+    padding : 0; 
+  }
+
+  .description:after{
+    background: transparent;
+  }
+}

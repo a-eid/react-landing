@@ -102,7 +102,27 @@
 }
 .nav__mobile--contain--button{
   background: #eee;
-  margin-left: -1em;
-  margin-right: -1em;
+  margin-left: -3em;
+  margin-right: -3em;
   padding:  1em;
+  /* transform: rotate(-7.6deg); */
+  /* transition: all 0.5 ease; */
+  /* transition-delay: 1s; */
 }
+
+.signUp{
+  /* margin-bottom: 10px; */
+}
+
+.active{
+  /* transform: rotate(0deg); */
+}
+
+
+/* make sure the nav is hidden as long as the icon is hidden  */
+@media (min-width: 680px){
+  .nav__mobile--active{
+    display: none;
+  }
+}
+
