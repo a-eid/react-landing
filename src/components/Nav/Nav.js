@@ -1,5 +1,6 @@
-import React from "react" 
-import "./Nav.css" 
+import React from "react"
+import {Link} from "react-router-dom";
+import "./Nav.css"
 
 
 
@@ -10,6 +11,8 @@ export default () => (
     <li>Developers</li>
     <li>Pricing</li>
   </ul>
-  <button className="btn">Submit Project</button>
+  <button className="btn nav__submit">
+    <Link to="/contact"> Submit Project </Link>
+  </button>
 </div>
 )

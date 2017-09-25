@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"
 import { $ } from "../../helper/bling";
 
 import NavMobile from "../navMobile/NavMobile"
@@ -46,7 +47,7 @@ export default class extends Component {
         <div className="header container">
           <header>
             {/* react logo */}
-            <Svg />
+            <Link to="/" className="nopadding"> <Svg /> </Link>
 
             <div className="nav-mobile-icon">
               <span />
@@ -59,7 +60,9 @@ export default class extends Component {
           <NavMobile active={this.state.navMobileActive} close={ this.closeNav } />
           <div className="intro" >
             <p>The Best Reactjs Developer for your project. Submit your requirement , we take care of everything else</p>
-            <button className="btn draw-border">Learn More</button>
+            <button className="btn draw-border">
+              <Link to="/contact"> Learn More </Link>
+            </button>
           </div>
         </div>
       </div>

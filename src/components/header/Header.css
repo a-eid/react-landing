@@ -107,6 +107,3 @@
           transition-delay: 0s, 0.25s, 0s;
 }
 
-.btn:focus {
-  outline: 2px dotted #55d;
-}

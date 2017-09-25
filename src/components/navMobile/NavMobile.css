@@ -8,7 +8,7 @@
   padding-top: 80px;
   max-width: 650px;
   margin: 0 auto;
-  left: 7px; 
+  left: 7px;
   right: 7px;
   top: 18px;
   background: #fff;
@@ -54,10 +54,10 @@
 }
 
 .close{
-  width: 40px; 
+  width: 40px;
   height: 40px;
   position: absolute;
-  top: 10px; 
+  top: 10px;
   right: 10px;
   display: flex;
   justify-content: center;
@@ -68,7 +68,7 @@
   cursor: pointer;
 }
 .nav__mobile--button{
-  padding: .8em 1.4em;
+  /* padding: .8em 1.4em; */
   background: purple;
   color: white;
   letter-spacing: 3px;
@@ -87,7 +87,7 @@
 
 .nav__mobile--contain--top nav, .nav__mobile--contain--bottom section , .nav__mobile--contain--button div{
   max-width: 290px;
-  margin: auto; 
+  margin: auto;
 }
 
 .ul__container{

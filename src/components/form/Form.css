@@ -1,66 +1,196 @@
 .form__container{
   position: relative;
-  z-index: 1;
-  background: transparent;
-  margin-bottom: 190px;
+  min-height: 30em;
+  padding: 1em;
+  max-width: 900px;
+  margin: auto;
 }
 
-.form__card{
+.form__card {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 -3px 10px rgba(0,0,0,0.22);
+  border-top: 1px solid  rgba(0,0,0,0.25);
+  min-height: 7em;
+  border-radius: 7px;
+  margin: 1em auto;
   background: #fff;
-  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.form__card--description {
+  min-height: 10em;
+}
+
+.form__card--description .card__input {
+  /* min-height: 4em; */
+}
+
+.card__input[type=file] {
+  border: none;
+  min-height: auto;
+}
+
+
+.form__card div {
+  flex: 6;
+}
+
+.card__label{
+  flex: 2;
+}
+
+.cdata .card__label{
+  align-self: flex-start;
+  padding-top: 2em;
+}
+
+.card__input{
+  flex: 6;
+  border: none;
+  border-bottom: 1px solid #eee;
+  min-height: 40px;
+  outline: none;
+  font-size: 16px;
+}
+.card__input:first-child{
+  margin-top: 1em;
+}
+
+.card__input:last-child{
+  margin-bottom: 2em;
+}
+.card__input--block{
   display: block;
-  max-width: 650px;
-  margin: 1rem auto;
-  box-shadow:0 0px 22px rgba(0,0,0,0.25);
-  padding: 3em 1.5em;
+  width: 100%;
+}
+
+.card__icon-left{
+  font-size: 1em;
+  color: #eee;
+  padding-right: 10px;
+}
+
+.card__icon-right{
+  flex: 2;
+  padding-right: 10px;
+  font-size: 1.4em;
+  color: #eee; text-align: right;
+}
+
+.form__card label {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* media less than 900px */
+
+@media (max-width: 900px){
+  .card__icon-right{
+    flex: 1;
+  }
+
+  .card__label{
+    flex: 3;
+  }
+
+  .card__input{
+    /* flex: 9; */
+  }
+}
+
+
+
+
+/* placehoder text styling  */
+::placeholder {
+  color: #ddd;
+  text-indent: 2em;
+  vertical-align: middle;
+}
+
+/* radio buttons */
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
   position: relative;
-  top: 145px;
+  cursor: pointer;
+  margin: 30px;
+  padding-left: 28px;
+}
+input[type="radio"] + label:before, input[type="radio"] + label:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+input[type="radio"] + label:before {
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: #1565C0;
+  -moz-box-shadow: inset 0 0 0 18px #E0E0E0;
+  -webkit-box-shadow: inset 0 0 0 18px #E0E0E0;
+  box-shadow: inset 0 0 0 18px #E0E0E0;
+}
+input[type="radio"] + label:after {
+  top: 49%;
+  left: 9px;
+  width: 54px;
+  height: 54px;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.3);
+  -moz-transform: translate(-50%, -50%) scale(0);
+  -ms-transform: translate(-50%, -50%) scale(0);
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
 }
 
-
-@media (max-width: 665px){
-  .form__card {
-    max-width: 95% ;
-  }
+input[type="radio"]:checked + label:before {
+  -moz-box-shadow: inset 0 0 0 4px #E0E0E0;
+  -webkit-box-shadow: inset 0 0 0 4px #E0E0E0;
+  box-shadow: inset 0 0 0 4px #E0E0E0;
 }
-
-.form__card--header{
-  margin-top: 0;
-}
-
-.form__card--content{
-  font-size: 20px;
-  line-height: 1.4;
-}
-
-.form__card--button{
-  padding: 0.7em 3em;
-  background:  #3232ff;
-  color: white;
-  font-weight: 100;
-  border-radius: 7px;
-}
-
-
-@media(min-width: 750px){
-  .form__container{
-    margin-bottom: -39px;
-  }
+/* input[type="radio"]:checked + label:after {
+  -moz-transform: translate(-50%, -50%) scale(1);
+  -ms-transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+  -moz-animation: ripple 1s none;
+  -webkit-animation: ripple 1s none;
+  animation: ripple 1s none;
+} */
+@media (max-width: 600px){
   .form__card{
-    top: -52px;
-    max-width: 700px;
+    flex-direction: column;
+    position: relative;
+    padding-right: 2em;
+  }
+  .card__icon-right{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    /* padding-right: 0; */
+  }
+  .card__label , .card__input{
+    width: 90%;
+    margin: auto;
+    /* text-align: center; */
+  }
+
+  .cdata div{
+    width: 100%;
   }
 }
 
 
 
-@media(min-width: 1000px){
 
-  .form__card{
-    top: -75px;
-    left: -60px;
-    max-width: 800px;
-  }
-
-}
 

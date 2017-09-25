@@ -29,6 +29,7 @@
   max-width: 600px;
   margin: auto;
   transform: rotate(7.6deg);
+  padding: 1em;
 }
 .carousel__contain{
   display: flex;

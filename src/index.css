@@ -20,8 +20,16 @@ html {
   cursor: pointer;
   line-height: 1.5;
   font: 700 1.2rem 'Roboto Slab', sans-serif;
-  padding: .5em 1em;
   letter-spacing: 0.05rem;
+  padding: 0;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+span:focus{
+  outline: none;
 }
 
 ul{
@@ -33,3 +41,16 @@ ul{
 
 
 /* button collision effect */
+
+/* stripping away rr4 Link Default styling  */
+a{
+  text-decoration: none;
+  color: inherit;
+  padding: .8em 1.4em;
+  display: block;
+}
+
+a.nopadding{
+  padding: 0;
+}
+

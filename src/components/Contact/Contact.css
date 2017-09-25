@@ -1,5 +1,6 @@
 .contact__container{
   background: #eee;
+  position: relative; 
 }
 .contact{
   background: #eee;

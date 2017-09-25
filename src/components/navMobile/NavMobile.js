@@ -1,11 +1,16 @@
 import React , { Component } from "react";
+import {Link} from "react-router-dom"
 import "./NavMobile.css";
 
 
 export default class NavMobile extends Component {
 
+  hideNav = () => {
+    document.querySelector(".nav__mobile").classList.remove("nav__mobile--active")
+  }
+
   componentWillReceiveProps(nextProps){
-    // just in case you wanna hook on some styles to the button and the container 
+    // just in case you wanna hook on some styles to the button and the container
     if(nextProps.active) {
       document.querySelector(".nav__mobile--contain--button").classList.add("active")
     }else{
@@ -14,10 +19,10 @@ export default class NavMobile extends Component {
   }
 
   render() {
-    const {active , close} = this.props 
+    const {active , close} = this.props
     let classes = ["nav__mobile"]
-    active && classes.push("nav__mobile--active") 
-    
+    active && classes.push("nav__mobile--active")
+
     return (
       <div className= { classes.join(" ") } >
       <div className="nav__mobile--contain--top">
@@ -28,10 +33,12 @@ export default class NavMobile extends Component {
             <li><a onClick={e => e.preventDefault() } href="">About</a></li>
             <li><a onClick={e => e.preventDefault() } href="">Pricing</a></li>
           </ul>
-          <button className="btn nav__mobile--button">SUBMIT PROJECT</button>
+          <button className="btn nav__mobile--button">
+            <Link to="/contact" onClick={ this.hideNav } > SUBMIT PROJECT </Link>
+          </button>
         </nav>
       </div>
-        
+
       <div className="nav__mobile--contain--bottom">
           <section className="nav__mobile--bottom">
             <div className="ul__container">
